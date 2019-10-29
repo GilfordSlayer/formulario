@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:jsf="http://xmlns.jcp.org/jsf">
+    <head>
+        <meta charset="utf-8"/>
+        <title>IMC</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    </head>
+    <body>
+        <form jsf:prependId="false">
+            <h1>Calcular IMC</h1>
+            <h:messages globalOnly="true"/>
+            <div>
+                <p>Ingresa tu peso en kilos</p>  
+                <input jsf:id="peso" type="text" placeholder="Peso"
+                       jsf:required="true" jsf:value="#{ctrlIMC.peso}"/>
+                <br/>
+                <p>Ingresa tu estatura en metros</p>  
+                <input jsf:id="altura" type="text" placeholder="Altura (1.60)"
+                       jsf:required="true" jsf:value="#{ctrlIMC.altura}"/>
+                <h:message for="imc"/>
+            </div>
+            <div>
+                <br/>
+                <button jsf:action="#{ctrlIMC.calcular()}">Calcular</button>
+            </div>
+        </form>
+        <br/>
+        <table class="order-table"> 
+            <thead> 
+                <tr> 
+                    <th class="order-table-header" scope="col">Composición corporal</th> 
+                    <th class="order-table-header" scope="col">Índice de masa corporal (IMC)</th> 
+                </tr> 
+            </thead> 
+            <tbody> 
+                <tr class="order-table-odd-row"> 
+                    <td>Bajo de lo normal</td> 
+                    <td>Menos de 18.5</td> 
+                </tr> 
+                <tr class="order-table-even-row"> 
+                    <td>Normal</td> 
+                    <td>18.5 – 24.9</td> 
+                </tr> 
+                <tr class="order-table-odd-row"> 
+                    <td>Arriba de lo normal</td> 
+                    <td>25.0 – 29.9</td> 
+                </tr> 
+                <tr class="order-table-even-row"> 
+                    <td>Obesidad</td> 
+                    <td>Más de 30.0</td> 
+                </tr> 
+            </tbody> 
+        </table>
+        <br/>
+        <footer>
+            Copyright © Fernando Cuellar Rodríguez 901-M
+        </footer>
+    </body>
+</html>
